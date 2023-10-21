@@ -85,3 +85,21 @@ char **zsh_reallocdp(char **ptr, size_t old_size, size_t new_size)
 	free(ptr);
 	return (nptr);
 }
+
+/**
+ * zsh_rev_string - reverses a null-terminated string.
+ * @str: input string to be reversed.
+ * Reurn: no return value.
+ *
+ * Description: it takes a null-term. str as input and reverses it in place.
+ */
+void zsh_rev_string(char *str)
+{
+	int length = strlen(str);
+
+	for (int i = 0; i < length / 2; i++)
+		char temp = str[i];
+
+		str[i] = str[length - 1 - i];
+		str[length - 1 - i] = temp;
+}
