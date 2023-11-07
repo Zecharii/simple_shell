@@ -1,4 +1,4 @@
-#include "main.h"
+#include "zsh.h"
 
 /**
  * zsh_swap_char - swaps characters in a string based on a boolean condition.

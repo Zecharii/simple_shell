@@ -1,4 +1,4 @@
-#include "main.h"
+#include "zsh.h"
 
 /**
  * zsh_without_comment - removes comments from the input string.

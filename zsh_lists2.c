@@ -1,4 +1,4 @@
-#include "main.h"
+#include "zsh.h"
 
 /**
  * zsh_add_rvar_node - add a variable node to the linked list.

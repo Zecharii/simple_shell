@@ -1,4 +1,4 @@
-#include "main.h"
+#include "zsh.h"
 
 /**
  * zsh_repeat_char - checks if a character repeats 'z' times in a row.
