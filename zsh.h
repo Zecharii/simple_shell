@@ -46,51 +46,51 @@ typedef struct data
 } zsh_shell;
 
 /**
- * struct zsh_sep_list - singly linked list for zsh separators.
+ * struct zsh_sep_t - singly linked list for zsh separators.
  * @separator: separator characters (; | &).
- * @_next: next node in the list.
+ * @next: next node in the list.
  * Description: single linked list to store separators.
  */
-typedef struct zsh_sep_list
+typedef struct zsh_sep_t
 {
 	char separator;
-	struct zsh_sep_list *_next;
+	struct zsh_sep_t *next;
 } zsh_sep_t;
 
 /**
- * struct zsh_var_list - singly linked list for zsh variables.
+ * struct zsh_var_t - singly linked list for zsh variables.
  * @zsh_var_len: length of variable.
  * @value: variable value.
  * @val_len: value length.
- * @_next: pointer to the next node in the list.
+ * @next: pointer to the next node in the list.
  * Description: single linked list to store variables.
  */
-typedef struct zsh_var_list
+typedef struct zsh_var_t
 {
 	int zsh_var_len;
 	char *value;
 	int val_len;
-	struct zsh_var_list *_next;
+	struct zsh_var_t *next;
 } zsh_var_t;
 
 /**
- * struct zsh_cmdln_list - singly linked list for zsh command lines.
+ * struct zsh_cmdln_t - singly linked list for zsh command lines.
  * @line: the command line.
- * @_next: next node in the list.
+ * @next: next node in the list.
  * Description: singly linked list to store command lines.
  */
-typedef  struct zsh_cmdln_list
+typedef  struct zsh_cmdln_t
 {
 	char *line;
-	struct zsh_cmdln_list *_next;
+	struct zsh_cmdln_t *next;
 } zsh_cmdln_t;
 
 /**
- * struct builtin_cmd - struct containing builtin commands.
+ * struct builtin_t - struct containing builtin commands.
  * @name: name of the builtin command (cd, ls, env).
  * @f: pointer to the associated function.
  */
-typedef struct builtin_cmd
+typedef struct builtin_t
 {
 	char *name;
 	int (*f)(zsh_zsh_shell *datash);
@@ -111,7 +111,7 @@ int zsh_charcmp(char str[], const char *delim);
 char *zsh_strtok(char str[], const char *delim);
 int zsh_isdigit(const char *str);
 
-/* zsh_mem.c */
+/* zsh_mem1.c */
 void zsh_memcpy(void *dest, const void *src, size_t size);
 void *zsh_realloc(void *ptr, size_t old_size, size_t new_size);
 char **zsh_reallocdp(char **ptr, size_t old_size, size_t new_size);
