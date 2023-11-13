@@ -142,4 +142,3 @@ char **zsh_split_line(char *input)
 
 	return (parts);
 }
-
